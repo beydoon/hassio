@@ -1,0 +1,203 @@
+# Automation for Fajr Adhan
+- alias: Fujr Adhan
+  id: '1517693010922'
+  trigger:
+    - platform: template
+      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_fajr"), "%Y-%m-%dT%H:%M:%S")) }}'
+
+  action:
+    - service: media_player.volume_set
+      data:
+        entity_id: 
+            - media_player.family_room_wifi
+            - media_player.guest_room_wifi
+        volume_level: '0.6'
+
+    - service: media_extractor.play_media
+      data:
+        entity_id: 
+            - media_player.family_room_wifi
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/adhan/adhan_fajr_makkah.mp3
+        media_content_type: audio/mp3
+
+    - delay: '00:03:48'
+
+    - service: media_extractor.play_media
+      data:
+        entity_id: media_player.family_room_wifi
+        media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
+        media_content_type: audio/mp3
+
+    - delay: '00:00:19'
+
+    - service: media_extractor.play_media
+      data:
+        entity_id: media_player.family_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
+        media_content_type: audio/mp3
+
+    - delay: '00:00:41'
+
+    - service: media_extractor.play_media
+      data:
+        entity_id: media_player.family_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
+        media_content_type: audio/mp3
+
+    - delay: '00:00:55'
+
+    - service: media_extractor.play_media
+      data:
+        entity_id: media_player.family_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
+        media_content_type: audio/mp3
+
+    - delay: '00:01:16'
+
+    - service: media_extractor.play_media
+      data:
+        entity_id: media_player.family_room_wifi
+        media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
+        media_content_type: audio/mp3
+
+# Automation for Dhuhr, Asr
+- alias: Dhuhr,Asr Adhan
+  id: '1517693010922'
+  trigger:
+    - platform: template
+      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_dhuhr"), "%Y-%m-%dT%H:%M:%S")) }}'
+    - platform: template
+      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_asr"), "%Y-%m-%dT%H:%M:%S")) }}'
+
+  action:
+    - service: media_player.volume_set
+      data:
+        entity_id: 
+            - media_player.family_room_wifi
+            - media_player.guest_room_wifi
+        volume_level: '0.7'
+
+    - service: media_extractor.play_media
+      data:
+        entity_id: 
+            - media_player.family_room_wifi
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
+        media_content_type: audio/mp3
+
+    - delay: '00:03:21'
+
+    - service: media_extractor.play_media
+      data:
+        entity_id: 
+            - media_player.family_room_wifi
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
+        media_content_type: audio/mp3
+
+# Automation Maghrib
+- alias: Maghrib Adhan
+  id: '1517693010922'
+  trigger:
+    - platform: template
+      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_maghrib"), "%Y-%m-%dT%H:%M:%S")) }}'
+
+  action:
+    - service: media_player.volume_set
+      data:
+        entity_id: 
+            - media_player.family_room_wifi
+            - media_player.guest_room_wifi
+        volume_level: '0.8'
+
+    - service: media_extractor.play_media
+      data:
+        entity_id: 
+            - media_player.family_room_wifi
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/adhan/bahrain_tv_athan_akmagraib.mp3
+        media_content_type: audio/mp3
+
+    - delay: '00:03:01'
+
+    - service: media_extractor.play_media
+      data:
+        entity_id: 
+            - media_player.family_room_wifi
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_55_ar_rahman_with_english.mp3
+        media_content_type: audio/mp3
+
+# Automation for Isha
+- alias: Isha Adhan
+  id: '1517693010922'
+  trigger:
+    - platform: template
+      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_isha"), "%Y-%m-%dT%H:%M:%S")) }}'
+
+  action:
+    - service: media_player.volume_set
+      data:
+        entity_id: 
+            - media_player.family_room_wifi
+            - media_player.guest_room_wifi
+        volume_level: '0.6'
+
+    - service: media_extractor.play_media
+      data:
+        entity_id: 
+            - media_player.family_room_wifi
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
+        media_content_type: audio/mp3
+
+    - delay: '00:03:21'
+
+    - service: media_extractor.play_media
+      data:
+        entity_id: 
+            - media_player.family_room_wifi
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
+        media_content_type: audio/mp3
+
+    - delay: '00:00:19'
+
+    - service: media_extractor.play_media
+      data:
+        entity_id: 
+            - media_player.family_room_wifi
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
+        media_content_type: audio/mp3
+
+    - delay: '00:00:41'
+
+    - service: media_extractor.play_media
+      data:
+        entity_id: 
+            - media_player.family_room_wifi
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
+        media_content_type: audio/mp3
+
+    - delay: '00:00:55'
+
+    - service: media_extractor.play_media
+      data:
+        entity_id: 
+            - media_player.family_room_wifi
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
+        media_content_type: audio/mp3
+
+    - delay: '00:01:16'
+
+    - service: media_extractor.play_media
+      data:
+        entity_id: 
+            - media_player.family_room_wifi
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
+        media_content_type: audio/mp3
