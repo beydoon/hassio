@@ -8,14 +8,14 @@
   action:
     - service: media_player.volume_set
       data:
-        entity_id: 
+        entity_id:
             - media_player.family_room_wifi
             - media_player.guest_room_wifi
         volume_level: '0.6'
 
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.family_room_wifi
             - media_player.guest_room_wifi
         media_content_id: http://192.168.1.160/aud/adhan/adhan_fajr_makkah.mp3
@@ -36,6 +36,7 @@
         entity_id: media_player.family_room_wifi
         media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
         media_content_type: audio/mp3
+        volume_level: '0.4'
 
     - delay: '00:00:41'
 
@@ -44,6 +45,7 @@
         entity_id: media_player.family_room_wifi
         media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
+        volume_level: '0.4'
 
     - delay: '00:00:55'
 
@@ -52,6 +54,7 @@
         entity_id: media_player.family_room_wifi
         media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
         media_content_type: audio/mp3
+        volume_level: '0.4'
 
     - delay: '00:01:16'
 
@@ -60,9 +63,11 @@
         entity_id: media_player.family_room_wifi
         media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
         media_content_type: audio/mp3
+        volume_level: '0.4'
+
 
 # Automation for Dhuhr, Asr
-- alias: Dhuhr,Asr Adhan
+- alias: DhuhrAsr Adhan
   id: '1517693010922'
   trigger:
     - platform: template
@@ -73,14 +78,14 @@
   action:
     - service: media_player.volume_set
       data:
-        entity_id: 
+        entity_id:
             - media_player.family_room_wifi
             - media_player.guest_room_wifi
         volume_level: '0.7'
 
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.family_room_wifi
             - media_player.guest_room_wifi
         media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
@@ -90,7 +95,7 @@
 
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.family_room_wifi
             - media_player.guest_room_wifi
         media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
@@ -106,14 +111,14 @@
   action:
     - service: media_player.volume_set
       data:
-        entity_id: 
+        entity_id:
             - media_player.family_room_wifi
             - media_player.guest_room_wifi
-        volume_level: '0.8'
+        volume_level: '0.9'
 
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.family_room_wifi
             - media_player.guest_room_wifi
         media_content_id: http://192.168.1.160/aud/adhan/bahrain_tv_athan_akmagraib.mp3
@@ -123,10 +128,8 @@
 
     - service: media_extractor.play_media
       data:
-        entity_id: 
-            - media_player.family_room_wifi
-            - media_player.guest_room_wifi
-        media_content_id: http://192.168.1.160/aud/surah/quran_55_ar_rahman_with_english.mp3
+        entity_id: media_player.family_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_36.mp3
         media_content_type: audio/mp3
 
 # Automation for Isha
@@ -139,14 +142,14 @@
   action:
     - service: media_player.volume_set
       data:
-        entity_id: 
+        entity_id:
             - media_player.family_room_wifi
             - media_player.guest_room_wifi
         volume_level: '0.6'
 
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.family_room_wifi
             - media_player.guest_room_wifi
         media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
@@ -156,7 +159,7 @@
 
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.family_room_wifi
             - media_player.guest_room_wifi
         media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
@@ -166,7 +169,7 @@
 
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.family_room_wifi
             - media_player.guest_room_wifi
         media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
@@ -176,7 +179,7 @@
 
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.family_room_wifi
             - media_player.guest_room_wifi
         media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
@@ -186,7 +189,7 @@
 
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.family_room_wifi
             - media_player.guest_room_wifi
         media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
@@ -196,8 +199,16 @@
 
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.family_room_wifi
             - media_player.guest_room_wifi
         media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
+        media_content_type: audio/mp3
+
+    - delay: '00:01:53'
+
+    - service: media_extractor.play_media
+      data:
+        entity_id: media_player.family_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_55.mp3
         media_content_type: audio/mp3
