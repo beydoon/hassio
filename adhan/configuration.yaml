@@ -1,0 +1,63 @@
+homeassistant:
+  latitude: [ENTER COORDINATION]
+  longitude: [ENTER COORDINATION]
+  elevation: 112
+  unit_system: metric
+  time_zone: America/Toronto
+  
+default_config:
+discovery:
+media_extractor:
+sun:
+
+# Islamic prayer times integration
+islamic_prayer_times:
+    calculation_method: isna
+
+# Sensors
+sensor:
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+      - 'time_date'
+  - platform: template
+    sensors:
+      salah_fujr:
+        friendly_name: "Salah Fujr"
+        value_template: >
+           {%- set a = states("sensor.fajr_prayer").split("T")[1].split(":")[0] -%}
+           {%- set b = states("sensor.fajr_prayer").split("T")[1].split(":")[1] -%}
+           {{ a + ":" + b }}
+      salah_dhuhr:
+        friendly_name: "Salah Dhuhr"
+        value_template: >
+           {%- set a = states("sensor.dhuhr_prayer").split("T")[1].split(":")[0] -%}
+           {%- set b = states("sensor.dhuhr_prayer").split("T")[1].split(":")[1] -%}
+           {{ a + ":" + b }}
+      salah_asr:
+        friendly_name: "Salah Asr"
+        value_template: >
+           {%- set a = states("sensor.asr_prayer").split("T")[1].split(":")[0] -%}
+           {%- set b = states("sensor.asr_prayer").split("T")[1].split(":")[1] -%}
+           {{ a + ":" + b }}
+      salah_maghrib:
+        friendly_name: "Salah Maghrib"
+        value_template: >
+           {%- set a = states("sensor.maghrib_prayer").split("T")[1].split(":")[0] -%}
+           {%- set b = states("sensor.maghrib_prayer").split("T")[1].split(":")[1] -%}
+           {{ a + ":" + b }}
+      salah_isha:
+        friendly_name: "Salah Isha"
+        value_template: >
+           {%- set a = states("sensor.isha_prayer").split("T")[1].split(":")[0] -%}
+           {%- set b = states("sensor.isha_prayer").split("T")[1].split(":")[1] -%}
+           {{ a + ":" + b }}
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
