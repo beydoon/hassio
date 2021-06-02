@@ -448,7 +448,6 @@
         entity_id:
           - media_player.googlehome7137
           - media_player.guest_room_wifi
-          - media_player.master_bedroom_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_01.mp3
         media_content_type: audio/mp3
     - delay: '00:01:28'
@@ -459,7 +458,6 @@
         entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
-            - media_player.master_bedroom_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
         media_content_type: audio/mp3
     - delay: '00:00:41'
@@ -470,7 +468,6 @@
         entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
-            - media_player.master_bedroom_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
     - delay: '00:00:55'
@@ -481,7 +478,6 @@
         entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
-            - media_player.master_bedroom_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
         media_content_type: audio/mp3
     - delay: '00:01:16'
@@ -492,6 +488,5 @@
         entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
-            - media_player.master_bedroom_speaker
         media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
         media_content_type: audio/mp3
