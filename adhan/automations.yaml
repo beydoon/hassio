@@ -11,106 +11,127 @@
   action:
     - service: media_player.volume_set
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.master_bedroom_speaker
-        volume_level: '0.25'
+        volume_level: '0.29'
 
+    # Fujr Adhan
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.master_bedroom_speaker
-        media_content_id: http://192.168.1.160/aud/adhan/adhan_fajr_makkah.mp3
+        #media_content_id: http://192.168.1.160/aud/adhan/adhan_fajr_makkah.mp3
+        media_content_id: http://192.168.1.160/aud/adhan/adhan_al-aqsa.mp3
         media_content_type: audio/mp3
+    #- delay: '00:03:50'
+    - delay: '00:04:15'
 
-    - delay: '00:03:50'
-
+    # Adhan Dua
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.master_bedroom_speaker
         media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
         media_content_type: audio/mp3
-
     - delay: '00:00:19'
 
-    - service: media_player.volume_set
-      data:
-        entity_id: 
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
-        volume_level: '0.29'
-        
+    #- service: media_player.volume_set
+    #  data:
+    #    entity_id:
+    #        - media_player.googlehome7137
+    #        - media_player.guest_room_wifi
+    #    volume_level: '0.29'
+
+    # 96 Surah Al'Alaq
+    #- service: media_extractor.play_media
+    #  data:
+    #    entity_id:
+    #        - media_player.googlehome7137
+    #        - media_player.guest_room_wifi
+    #    media_content_id: http://192.168.1.160/aud/surah/quran_96.mp3
+    #    media_content_type: audio/mp3
+
+    #- delay: '00:02:46'
+
+    # 109 Surah Al'Kafirun
+    #- service: media_extractor.play_media
+    #  data:
+    #    entity_id:
+    #        - media_player.googlehome7137
+    #        - media_player.guest_room_wifi
+    #    media_content_id: http://192.168.1.160/aud/surah/quran_109.mp3
+    #    media_content_type: audio/mp3
+
+    #- delay: '00:01:19'
+
+    # 110 Surah An'Nasr
+    #- service: media_extractor.play_media
+    #  data:
+    #    entity_id:
+    #        - media_player.googlehome7137
+    #        - media_player.guest_room_wifi
+    #    media_content_id: http://192.168.1.160/aud/surah/quran_110.mp3
+    #    media_content_type: audio/mp3
+
+    #- delay: '00:00:57'
+
+    # 01 Surah Al'Fatiha
     - service: media_extractor.play_media
       data:
-        entity_id: 
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
-        media_content_id: http://192.168.1.160/aud/surah/quran_96.mp3
+        entity_id:
+          - media_player.googlehome7137
+          - media_player.guest_room_wifi
+          - media_player.master_bedroom_speaker
+        media_content_id: http://192.168.1.160/aud/surah/quran_01.mp3
         media_content_type: audio/mp3
+    - delay: '00:01:28'
 
-    - delay: '00:02:46'
-
+    # 112 Surah Al'Ikhlas
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
-        media_content_id: http://192.168.1.160/aud/surah/quran_109.mp3
-        media_content_type: audio/mp3
-
-    - delay: '00:01:19'
-
-    - service: media_extractor.play_media
-      data:
-        entity_id: 
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
-        media_content_id: http://192.168.1.160/aud/surah/quran_110.mp3
-        media_content_type: audio/mp3
-
-    - delay: '00:00:57'
-
-    - service: media_extractor.play_media
-      data:
-        entity_id: 
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.master_bedroom_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
         media_content_type: audio/mp3
-
     - delay: '00:00:41'
 
+    # 113 Surah Al'Falaq
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
+            - media_player.master_bedroom_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
-
     - delay: '00:00:55'
 
+    # 114 Surah An'Nas
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
+            - media_player.master_bedroom_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
         media_content_type: audio/mp3
-
     - delay: '00:01:16'
 
+    # Ayat'ul Kursi
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
+            - media_player.master_bedroom_speaker
         media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
         media_content_type: audio/mp3
-        
+
 
 # Dhuhr Adhan
 ################################################################################
@@ -125,38 +146,87 @@
   action:
     - service: media_player.volume_set
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
         volume_level: '0.5'
 
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
-        media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
-        #media_content_id: http://192.168.1.160/aud/adhan/adhan_al-aqsa.mp3
+        #media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
+        media_content_id: http://192.168.1.160/aud/adhan/adhan_al-aqsa.mp3
         media_content_type: audio/mp3
-
-    - delay: '00:03:22'
-    #- delay: '00:04:15'
+    #- delay: '00:03:22'
+    - delay: '00:04:15'
 
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
         media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
         media_content_type: audio/mp3
-        
-#    - delay: '00:03:01'
+    - delay: '00:00:19'
 
 #    - service: media_extractor.play_media
 #      data:
 #        entity_id: media_player.family_room_speaker_2
 #        media_content_id: http://192.168.1.160/aud/surah/quran_36.mp3
 #        media_content_type: audio/mp3
+
+    # 01 Surah Al'Fatiha
+    - service: media_extractor.play_media
+      data:
+        entity_id:
+          - media_player.googlehome7137
+          - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_01.mp3
+        media_content_type: audio/mp3
+    - delay: '00:01:28'
+
+    # 112 Surah Al'Ikhlas
+    - service: media_extractor.play_media
+      data:
+        entity_id:
+            - media_player.googlehome7137
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
+        media_content_type: audio/mp3
+    - delay: '00:00:41'
+
+    # 113 Surah Al'Falaq
+    - service: media_extractor.play_media
+      data:
+        entity_id:
+            - media_player.googlehome7137
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
+        media_content_type: audio/mp3
+
+    - delay: '00:00:55'
+
+    # 114 Surah An'Nas
+    - service: media_extractor.play_media
+      data:
+        entity_id:
+            - media_player.googlehome7137
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
+        media_content_type: audio/mp3
+
+    - delay: '00:01:16'
+
+    # Ayat'ul Kursi
+    - service: media_extractor.play_media
+      data:
+        entity_id:
+            - media_player.googlehome7137
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
+        media_content_type: audio/mp3
 
 # Asr Adhan
 ################################################################################
@@ -171,29 +241,78 @@
   action:
     - service: media_player.volume_set
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
         volume_level: '0.5'
 
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
-        media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
-        #media_content_id: http://192.168.1.160/aud/adhan/adhan_al-aqsa.mp3
+        #media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
+        media_content_id: http://192.168.1.160/aud/adhan/adhan_al-aqsa.mp3
         media_content_type: audio/mp3
-
-    - delay: '00:03:22'
-    #- delay: '00:04:15'
+    #- delay: '00:03:22'
+    - delay: '00:04:15'
 
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
         media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
+        media_content_type: audio/mp3
+    - delay: '00:00:19'
+
+    # 01 Surah Al'Fatiha
+    - service: media_extractor.play_media
+      data:
+        entity_id:
+          - media_player.googlehome7137
+          - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_01.mp3
+        media_content_type: audio/mp3
+    - delay: '00:01:28'
+
+    # 112 Surah Al'Ikhlas
+    - service: media_extractor.play_media
+      data:
+        entity_id:
+            - media_player.googlehome7137
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
+        media_content_type: audio/mp3
+    - delay: '00:00:41'
+
+    # 113 Surah Al'Falaq
+    - service: media_extractor.play_media
+      data:
+        entity_id:
+            - media_player.googlehome7137
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
+        media_content_type: audio/mp3
+    - delay: '00:00:55'
+
+    # 114 Surah An'Nas
+    - service: media_extractor.play_media
+      data:
+        entity_id:
+            - media_player.googlehome7137
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
+        media_content_type: audio/mp3
+    - delay: '00:01:16'
+
+    # Ayat'ul Kursi
+    - service: media_extractor.play_media
+      data:
+        entity_id:
+            - media_player.googlehome7137
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
         media_content_type: audio/mp3
 
 # Maghrib Adhan
@@ -209,14 +328,14 @@
   action:
     - service: media_player.volume_set
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
         volume_level: '0.5'
 
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
 #        media_content_id: http://192.168.1.160/aud/adhan/bahrain_tv_athan_akmagraib.mp3
@@ -224,7 +343,6 @@
 #        media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
         media_content_id: http://192.168.1.160/aud/adhan/adhan_al-aqsa.mp3
         media_content_type: audio/mp3
-
 #    - delay: '00:03:22'
     - delay: '00:04:15'
 
@@ -232,6 +350,58 @@
       data:
         entity_id: media_player.googlehome7137
         media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
+        media_content_type: audio/mp3
+    - delay: '00:00:19'
+
+    # 01 Surah Al'Fatiha
+    - service: media_extractor.play_media
+      data:
+        entity_id:
+          - media_player.googlehome7137
+          - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_01.mp3
+        media_content_type: audio/mp3
+    - delay: '00:01:28'
+
+    # 112 Surah Al'Ikhlas
+    - service: media_extractor.play_media
+      data:
+        entity_id:
+            - media_player.googlehome7137
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
+        media_content_type: audio/mp3
+    - delay: '00:00:41'
+
+    # 113 Surah Al'Falaq
+    - service: media_extractor.play_media
+      data:
+        entity_id:
+            - media_player.googlehome7137
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
+        media_content_type: audio/mp3
+
+    - delay: '00:00:55'
+
+    # 114 Surah An'Nas
+    - service: media_extractor.play_media
+      data:
+        entity_id:
+            - media_player.googlehome7137
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
+        media_content_type: audio/mp3
+
+    - delay: '00:01:16'
+
+    # Ayat'ul Kursi
+    - service: media_extractor.play_media
+      data:
+        entity_id:
+            - media_player.googlehome7137
+            - media_player.guest_room_wifi
+        media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
         media_content_type: audio/mp3
 
 # Isha Adhan
@@ -247,96 +417,81 @@
   action:
     - service: media_player.volume_set
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
         volume_level: '0.5'
 
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
         #media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
         media_content_id: http://192.168.1.160/aud/adhan/adhan_al-aqsa.mp3
         media_content_type: audio/mp3
-
     #- delay: '00:03:22'
     - delay: '00:04:15'
 
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
         media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
         media_content_type: audio/mp3
-
     - delay: '00:00:19'
-        
+
+    # 01 Surah Al'Fatiha
     - service: media_extractor.play_media
       data:
-        entity_id: 
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
-        media_content_id: http://192.168.1.160/aud/surah/quran_109.mp3
+        entity_id:
+          - media_player.googlehome7137
+          - media_player.guest_room_wifi
+          - media_player.master_bedroom_speaker
+        media_content_id: http://192.168.1.160/aud/surah/quran_01.mp3
         media_content_type: audio/mp3
+    - delay: '00:01:28'
 
-    - delay: '00:01:19'
-
+    # 112 Surah Al'Ikhlas
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
-        media_content_id: http://192.168.1.160/aud/surah/quran_110.mp3
-        media_content_type: audio/mp3
-
-    - delay: '00:00:57'
-
-    - service: media_extractor.play_media
-      data:
-        entity_id: 
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.master_bedroom_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
         media_content_type: audio/mp3
-
     - delay: '00:00:41'
 
+    # 113 Surah Al'Falaq
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
+            - media_player.master_bedroom_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
-
     - delay: '00:00:55'
 
+    # 114 Surah An'Nas
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
+            - media_player.master_bedroom_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
         media_content_type: audio/mp3
-
     - delay: '00:01:16'
 
+    # Ayat'ul Kursi
     - service: media_extractor.play_media
       data:
-        entity_id: 
+        entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
+            - media_player.master_bedroom_speaker
         media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
         media_content_type: audio/mp3
-        
-#    - delay: '00:01:53'
-    
-#    - service: media_extractor.play_media
-#      data:
-#        entity_id: media_player.family_room_wifi
-#        media_content_id: http://192.168.1.160/aud/surah/quran_55.mp3
-#        media_content_type: audio/mp3
-
