@@ -4,8 +4,8 @@
   id: '1517693010922'
   trigger:
     - platform: template
-     #value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_fajr"), "%Y-%m-%dT%H:%M:%S")) -3600 }}' # Activate this in November right after the time change
-     #value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_fajr"), "%Y-%m-%dT%H:%M:%S")) +3600 }}' # Activate this in March right after the time change
+#     value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_fajr"), "%Y-%m-%dT%H:%M:%S")) -3600 }}' # Activate this in November right after the time change
+#     value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_fajr"), "%Y-%m-%dT%H:%M:%S")) +3600 }}' # Activate this in March right after the time change
       value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_fajr"), "%Y-%m-%dT%H:%M:%S")) }}'       # Always the Normal
 
   action:
@@ -338,12 +338,12 @@
         entity_id:
             - media_player.googlehome7137
             - media_player.guest_room_wifi
-        #media_content_id: http://192.168.1.160/aud/adhan/bahrain_tv_athan_akmagraib.mp3
-        #media_content_id: http://192.168.1.160/aud/adhan/adhan_al-maghrib_madinah.mp3
-        #media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
+#        media_content_id: http://192.168.1.160/aud/adhan/bahrain_tv_athan_akmagraib.mp3
+#        media_content_id: http://192.168.1.160/aud/adhan/adhan_al-maghrib_madinah.mp3
+#        media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
         media_content_id: http://192.168.1.160/aud/adhan/adhan_al-aqsa.mp3
         media_content_type: audio/mp3
-    #- delay: '00:03:22'
+#    - delay: '00:03:22'
     - delay: '00:04:15'
 
     - service: media_extractor.play_media
@@ -410,8 +410,8 @@
   id: '1517693010922'
   trigger:
     - platform: template
-      #value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_isha"), "%Y-%m-%dT%H:%M:%S")) -3600 }}' # Activate this in November right after the time change
-      #value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_isha"), "%Y-%m-%dT%H:%M:%S")) +3600 }}'    # Activate this in March right after the time change
+#     value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_isha"), "%Y-%m-%dT%H:%M:%S")) -3600 }}' # Activate this in November right after the time change
+#     value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_isha"), "%Y-%m-%dT%H:%M:%S")) +3600 }}'    # Activate this in March right after the time change
       value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_isha"), "%Y-%m-%dT%H:%M:%S")) }}'       # Always the Normal
 
   action:
