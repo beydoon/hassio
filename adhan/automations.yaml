@@ -109,7 +109,7 @@
             - media_player.master_bedroom_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
-    - delay: '00:00:57'
+    - delay: '00:00:56'
 
     # 114 Surah An'Nas
     - service: media_extractor.play_media
@@ -206,7 +206,7 @@
         media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
 
-    - delay: '00:00:57'
+    - delay: '00:00:56'
 
     # 114 Surah An'Nas
     - service: media_extractor.play_media
@@ -294,7 +294,7 @@
             - media_player.guest_room_wifi
         media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
-    - delay: '00:00:57'
+    - delay: '00:00:56'
 
     # 114 Surah An'Nas
     - service: media_extractor.play_media
@@ -381,8 +381,7 @@
             - media_player.guest_room_wifi
         media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
-
-    - delay: '00:00:57'
+    - delay: '00:00:56'
 
     # 114 Surah An'Nas
     - service: media_extractor.play_media
@@ -470,7 +469,7 @@
             - media_player.guest_room_wifi
         media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
-    - delay: '00:00:57'
+    - delay: '00:00:56'
 
     # 114 Surah An'Nas
     - service: media_extractor.play_media
