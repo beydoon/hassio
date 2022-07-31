@@ -24,7 +24,7 @@
             - media_player.family_room_speaker
             - media_player.master_bedroom_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/adhan/adhan_fajr_makkah.mp3
+        media_content_id: http://copernicium.universe.hm/aud/adhan/adhan_fajr_makkah.mp3
         media_content_type: audio/mp3
     - delay: '00:03:50'
 
@@ -35,7 +35,7 @@
             - media_player.family_room_speaker
             - media_player.master_bedroom_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
+        media_content_id: http://copernicium.universe.hm/aud/dua/dua-e-adhan.mp3
         media_content_type: audio/mp3
     - delay: '00:00:19'
 
@@ -52,7 +52,7 @@
     #    entity_id:
     #        - media_player.family_room_speaker
     #        - media_player.guest_room_wifi
-    #    media_content_id: http://192.168.1.160/aud/surah/quran_96.mp3
+    #    media_content_id: http://copernicium.universe.hm/aud/surah/quran_96.mp3
     #    media_content_type: audio/mp3
 
     #- delay: '00:02:46'
@@ -63,7 +63,7 @@
     #    entity_id:
     #        - media_player.family_room_speaker
     #        - media_player.guest_room_wifi
-    #    media_content_id: http://192.168.1.160/aud/surah/quran_109.mp3
+    #    media_content_id: http://copernicium.universe.hm/aud/surah/quran_109.mp3
     #    media_content_type: audio/mp3
 
     #- delay: '00:01:19'
@@ -74,7 +74,7 @@
     #    entity_id:
     #        - media_player.family_room_speaker
     #        - media_player.guest_room_wifi
-    #    media_content_id: http://192.168.1.160/aud/surah/quran_110.mp3
+    #    media_content_id: http://copernicium.universe.hm/aud/surah/quran_110.mp3
     #    media_content_type: audio/mp3
 
     #- delay: '00:00:57'
@@ -86,7 +86,7 @@
           - media_player.master_bedroom_speaker
           - media_player.family_room_speaker
           - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_01.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_01.mp3
         media_content_type: audio/mp3
     - delay: '00:01:28'
 
@@ -97,7 +97,7 @@
           - media_player.master_bedroom_speaker
           - media_player.family_room_speaker
           - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_112.mp3
         media_content_type: audio/mp3
     - delay: '00:00:41'
 
@@ -108,7 +108,7 @@
           - media_player.master_bedroom_speaker
           - media_player.family_room_speaker
           - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
     - delay: '00:00:56'
 
@@ -119,7 +119,7 @@
           - media_player.master_bedroom_speaker
           - media_player.family_room_speaker
           - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_114.mp3
         media_content_type: audio/mp3
     - delay: '00:01:17'
 
@@ -130,7 +130,7 @@
           - media_player.master_bedroom_speaker
           - media_player.family_room_speaker
           - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
+        media_content_id: http://copernicium.universe.hm/aud/ayah/ayat_ul-kursi.mp3
         media_content_type: audio/mp3
 
 
@@ -157,8 +157,8 @@
             - media_player.master_bedroom_speaker
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/adhan/adhan_al-aqsa.mp3 
-#       media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
+        media_content_id: http://copernicium.universe.hm/aud/adhan/adhan_al-aqsa.mp3 
+#       media_content_id: http://copernicium.universe.hm/aud/adhan/adhan_makkah.mp3
         media_content_type: audio/mp3
     #- delay: '00:03:22'
     - delay: '00:04:15'
@@ -168,7 +168,7 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
+        media_content_id: http://copernicium.universe.hm/aud/dua/dua-e-adhan.mp3
         media_content_type: audio/mp3
     - delay: '00:00:19'
 
@@ -178,7 +178,7 @@
         entity_id:
           - media_player.family_room_speaker
           - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_01.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_01.mp3
         media_content_type: audio/mp3
     - delay: '00:01:28'
 
@@ -188,7 +188,7 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_112.mp3
         media_content_type: audio/mp3
     - delay: '00:00:41'
 
@@ -198,7 +198,7 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
 
     - delay: '00:00:56'
@@ -209,7 +209,7 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_114.mp3
         media_content_type: audio/mp3
     - delay: '00:01:17'
 
@@ -219,7 +219,7 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
+        media_content_id: http://copernicium.universe.hm/aud/ayah/ayat_ul-kursi.mp3
         media_content_type: audio/mp3
 
 # Asr Adhan
@@ -245,8 +245,8 @@
             - media_player.master_bedroom_speaker
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-#       media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
-        media_content_id: http://192.168.1.160/aud/adhan/adhan_al-aqsa.mp3
+#       media_content_id: http://copernicium.universe.hm/aud/adhan/adhan_makkah.mp3
+        media_content_id: http://copernicium.universe.hm/aud/adhan/adhan_al-aqsa.mp3
         media_content_type: audio/mp3
 #   - delay: '00:03:22'
     - delay: '00:04:15'
@@ -256,7 +256,7 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
+        media_content_id: http://copernicium.universe.hm/aud/dua/dua-e-adhan.mp3
         media_content_type: audio/mp3
     - delay: '00:00:19'
 
@@ -266,7 +266,7 @@
         entity_id:
           - media_player.family_room_speaker
           - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_01.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_01.mp3
         media_content_type: audio/mp3
     - delay: '00:01:28'
 
@@ -276,7 +276,7 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_112.mp3
         media_content_type: audio/mp3
     - delay: '00:00:41'
 
@@ -286,7 +286,7 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
     - delay: '00:00:56'
 
@@ -296,7 +296,7 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_114.mp3
         media_content_type: audio/mp3
     - delay: '00:01:17'
 
@@ -306,16 +306,16 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
+        media_content_id: http://copernicium.universe.hm/aud/ayah/ayat_ul-kursi.mp3
         media_content_type: audio/mp3
 
-# Maghrib Adhan
+# Mughrib Adhan
 ################################################################################
 - alias: Maghrib Adhan
   id: '1517693010925'
   trigger:
     - platform: template
-      value_template: '{% set x = states(''sensor.maghrib_prayer_time'') %} {{ now() >= today_at(strptime(x, "%I:%M %p").time()) }}'
+      value_template: '{% set x = states(''sensor.mughrib_prayer_time'') %} {{ now() >= today_at(strptime(x, "%I:%M %p").time()) }}'
       
   action:
     - service: media_player.volume_set
@@ -332,10 +332,10 @@
             - media_player.master_bedroom_speaker
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/adhan/adhan_al-maghrib_madinah.mp3
-#       media_content_id: http://192.168.1.160/aud/adhan/bahrain_tv_athan_akmagraib.mp3
+        media_content_id: http://copernicium.universe.hm/aud/adhan/adhan_al-maghrib_madinah.mp3
+#       media_content_id: http://copernicium.universe.hm/aud/adhan/bahrain_tv_athan_akmagraib.mp3
         media_content_type: audio/mp3
-    - delay: '00:03:37' # adhan_al-maghrib_madinah
+    - delay: '00:03:37' # adhan_al-mughrib_madinah
 
     - service: media_player.volume_set
       data:
@@ -349,7 +349,7 @@
         entity_id: 
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
+        media_content_id: http://copernicium.universe.hm/aud/dua/dua-e-adhan.mp3
         media_content_type: audio/mp3
     - delay: '00:00:19'
 
@@ -359,7 +359,7 @@
         entity_id:
           - media_player.family_room_speaker
           - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_01.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_01.mp3
         media_content_type: audio/mp3
     - delay: '00:01:28'
 
@@ -369,7 +369,7 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_112.mp3
         media_content_type: audio/mp3
     - delay: '00:00:41'
 
@@ -379,7 +379,7 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
     - delay: '00:00:56'
 
@@ -389,7 +389,7 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_114.mp3
         media_content_type: audio/mp3
 
     - delay: '00:01:17'
@@ -400,7 +400,7 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
+        media_content_id: http://copernicium.universe.hm/aud/ayah/ayat_ul-kursi.mp3
         media_content_type: audio/mp3
 
 # Isha Adhan
@@ -426,8 +426,8 @@
             - media_player.master_bedroom_speaker
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-#       media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
-        media_content_id: http://192.168.1.160/aud/adhan/adhan_al-aqsa.mp3
+#       media_content_id: http://copernicium.universe.hm/aud/adhan/adhan_makkah.mp3
+        media_content_id: http://copernicium.universe.hm/aud/adhan/adhan_al-aqsa.mp3
         media_content_type: audio/mp3
     #- delay: '00:03:22'
     - delay: '00:04:15'
@@ -437,7 +437,7 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
+        media_content_id: http://copernicium.universe.hm/aud/dua/dua-e-adhan.mp3
         media_content_type: audio/mp3
     - delay: '00:00:19'
 
@@ -447,7 +447,7 @@
         entity_id:
           - media_player.family_room_speaker
           - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_01.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_01.mp3
         media_content_type: audio/mp3
     - delay: '00:01:28'
 
@@ -457,7 +457,7 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_112.mp3
         media_content_type: audio/mp3
     - delay: '00:00:41'
 
@@ -467,7 +467,7 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
     - delay: '00:00:56'
 
@@ -477,7 +477,7 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
+        media_content_id: http://copernicium.universe.hm/aud/surah/quran_114.mp3
         media_content_type: audio/mp3
     - delay: '00:01:17'
 
@@ -487,5 +487,5 @@
         entity_id:
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
-        media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
+        media_content_id: http://copernicium.universe.hm/aud/ayah/ayat_ul-kursi.mp3
         media_content_type: audio/mp3

@@ -36,7 +36,7 @@ sensor:
         friendly_name: "Asr Prayer Time"
         value_template: >
           {{ today_at(state_attr('sensor.prayer_times','data').timings['Asr']).strftime("%I:%M %p") }}
-      maghrib_prayer_time:
+      mughrib_prayer_time:
         friendly_name: "Maghrib Prayer Time"
         value_template: >
           {{ today_at(state_attr('sensor.prayer_times','data').timings['Maghrib']).strftime("%I:%M %p") }}
