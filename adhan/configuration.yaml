@@ -1,59 +1,50 @@
-homeassistant:
-  latitude: [ENTER COORDINATION]
-  longitude: [ENTER COORDINATION]
-  elevation: 112
-  unit_system: metric
-  time_zone: America/Toronto
-  
 default_config:
 discovery:
 media_extractor:
 sun:
 
-# Islamic prayer times integration
-islamic_prayer_times:
-    calculation_method: isna
-
-# Sensors
 sensor:
   - platform: time_date
     display_options:
       - 'time'
       - 'date'
+      - 'date_time'
+      - 'date_time_iso'
       - 'time_date'
+      - 'time_utc'
+      - 'beat'
+
+  - platform: rest
+    name: "Prayer Times"
+    json_attributes:
+      - data
+    resource: "http://api.aladhan.com/v1/timings?latitude=43.21824&longitude=-79.7875487&method=2&school=0"
+    value_template: '{{ value_json["data"]["meta"]["method"]["name"].title() }}'
+    scan_interval: 3600
+
   - platform: template
     sensors:
-      salah_fujr:
-        friendly_name: "Salah Fujr"
+      fajr_prayer_time:
+        friendly_name: "Fajr Prayer Time"
         value_template: >
-           {%- set a = states("sensor.fajr_prayer").split("T")[1].split(":")[0] -%}
-           {%- set b = states("sensor.fajr_prayer").split("T")[1].split(":")[1] -%}
-           {{ a + ":" + b }}
-      salah_dhuhr:
-        friendly_name: "Salah Dhuhr"
+          {{ today_at(state_attr('sensor.prayer_times','data').timings['Fajr']).strftime("%I:%M %p") }}
+      dhuhr_prayer_time:
+        friendly_name: "Dhuhr Prayer Time"
         value_template: >
-           {%- set a = states("sensor.dhuhr_prayer").split("T")[1].split(":")[0] -%}
-           {%- set b = states("sensor.dhuhr_prayer").split("T")[1].split(":")[1] -%}
-           {{ a + ":" + b }}
-      salah_asr:
-        friendly_name: "Salah Asr"
+          {{ today_at(state_attr('sensor.prayer_times','data').timings['Dhuhr']).strftime("%I:%M %p") }}
+      asr_prayer_time:
+        friendly_name: "Asr Prayer Time"
         value_template: >
-           {%- set a = states("sensor.asr_prayer").split("T")[1].split(":")[0] -%}
-           {%- set b = states("sensor.asr_prayer").split("T")[1].split(":")[1] -%}
-           {{ a + ":" + b }}
-      salah_maghrib:
-        friendly_name: "Salah Maghrib"
+          {{ today_at(state_attr('sensor.prayer_times','data').timings['Asr']).strftime("%I:%M %p") }}
+      maghrib_prayer_time:
+        friendly_name: "Maghrib Prayer Time"
         value_template: >
-           {%- set a = states("sensor.maghrib_prayer").split("T")[1].split(":")[0] -%}
-           {%- set b = states("sensor.maghrib_prayer").split("T")[1].split(":")[1] -%}
-           {{ a + ":" + b }}
-      salah_isha:
-        friendly_name: "Salah Isha"
+          {{ today_at(state_attr('sensor.prayer_times','data').timings['Maghrib']).strftime("%I:%M %p") }}
+      isha_prayer_time:
+        friendly_name: "Isha Prayer Time"
         value_template: >
-           {%- set a = states("sensor.isha_prayer").split("T")[1].split(":")[0] -%}
-           {%- set b = states("sensor.isha_prayer").split("T")[1].split(":")[1] -%}
-           {{ a + ":" + b }}
-
+          {{ today_at(state_attr('sensor.prayer_times','data').timings['Isha']).strftime("%I:%M %p") }}
+          
 # Text to speech
 tts:
   - platform: google_translate

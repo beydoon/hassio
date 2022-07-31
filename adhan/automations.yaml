@@ -4,36 +4,37 @@
   id: '1517693010922'
   trigger:
     - platform: template
-#     value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_fajr"), "%Y-%m-%dT%H:%M:%S")) -3600 }}' # Activate this in November right after the time change
-#     value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_fajr"), "%Y-%m-%dT%H:%M:%S")) +3600 }}' # Activate this in March right after the time change
-      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_fajr"), "%Y-%m-%dT%H:%M:%S")) }}'       # Always the Normal
+#     value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_isha"), "%Y-%m-%dT%H:%M:%S")) -3600 }}' # Activate this in November right after the time change
+#     value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_isha"), "%Y-%m-%dT%H:%M:%S")) +3600 }}' # Activate this in March right after the time change
+      value_template: '{% set x = states(''sensor.fajr_prayer_time'') %} {{ now() >= today_at(strptime(x, "%I:%M %p").time()) }}'
 
   action:
     - service: media_player.volume_set
       data:
         entity_id:
-            - media_player.googlehome7137
+            - media_player.family_room_speaker
             - media_player.master_bedroom_speaker
+            - media_player.main_floor_speaker
         volume_level: '0.40'
 
     # Fujr Adhan
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
+            - media_player.family_room_speaker
             - media_player.master_bedroom_speaker
-        #media_content_id: http://192.168.1.160/aud/adhan/adhan_fajr_makkah.mp3
-        media_content_id: http://192.168.1.160/aud/adhan/adhan_al-aqsa.mp3
+            - media_player.main_floor_speaker
+        media_content_id: http://192.168.1.160/aud/adhan/adhan_fajr_makkah.mp3
         media_content_type: audio/mp3
-    #- delay: '00:03:50'
-    - delay: '00:04:15'
+    - delay: '00:03:50'
 
     # Adhan Dua
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
+            - media_player.family_room_speaker
             - media_player.master_bedroom_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
         media_content_type: audio/mp3
     - delay: '00:00:19'
@@ -41,7 +42,7 @@
     #- service: media_player.volume_set
     #  data:
     #    entity_id:
-    #        - media_player.googlehome7137
+    #        - media_player.family_room_speaker
     #        - media_player.guest_room_wifi
     #    volume_level: '0.29'
 
@@ -49,7 +50,7 @@
     #- service: media_extractor.play_media
     #  data:
     #    entity_id:
-    #        - media_player.googlehome7137
+    #        - media_player.family_room_speaker
     #        - media_player.guest_room_wifi
     #    media_content_id: http://192.168.1.160/aud/surah/quran_96.mp3
     #    media_content_type: audio/mp3
@@ -60,7 +61,7 @@
     #- service: media_extractor.play_media
     #  data:
     #    entity_id:
-    #        - media_player.googlehome7137
+    #        - media_player.family_room_speaker
     #        - media_player.guest_room_wifi
     #    media_content_id: http://192.168.1.160/aud/surah/quran_109.mp3
     #    media_content_type: audio/mp3
@@ -71,7 +72,7 @@
     #- service: media_extractor.play_media
     #  data:
     #    entity_id:
-    #        - media_player.googlehome7137
+    #        - media_player.family_room_speaker
     #        - media_player.guest_room_wifi
     #    media_content_id: http://192.168.1.160/aud/surah/quran_110.mp3
     #    media_content_type: audio/mp3
@@ -82,9 +83,9 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-          - media_player.googlehome7137
-          - media_player.guest_room_wifi
           - media_player.master_bedroom_speaker
+          - media_player.family_room_speaker
+          - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_01.mp3
         media_content_type: audio/mp3
     - delay: '00:01:28'
@@ -93,9 +94,9 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
-            - media_player.master_bedroom_speaker
+          - media_player.master_bedroom_speaker
+          - media_player.family_room_speaker
+          - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
         media_content_type: audio/mp3
     - delay: '00:00:41'
@@ -104,9 +105,9 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
-            - media_player.master_bedroom_speaker
+          - media_player.master_bedroom_speaker
+          - media_player.family_room_speaker
+          - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
     - delay: '00:00:56'
@@ -115,20 +116,20 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
-            - media_player.master_bedroom_speaker
+          - media_player.master_bedroom_speaker
+          - media_player.family_room_speaker
+          - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
         media_content_type: audio/mp3
-    - delay: '00:01:16'
+    - delay: '00:01:17'
 
     # Ayat'ul Kursi
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
-            - media_player.master_bedroom_speaker
+          - media_player.master_bedroom_speaker
+          - media_player.family_room_speaker
+          - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
         media_content_type: audio/mp3
 
@@ -136,28 +137,28 @@
 # Dhuhr Adhan
 ################################################################################
 - alias: Dhuhr Adhan
-  id: '1517693010922'
+  id: '1517693010923'
   trigger:
     - platform: template
-#     value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_dhuhr"), "%Y-%m-%dT%H:%M:%S")) -3600 }}' # Activate this in November right after the time change
-#     value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_dhuhr"), "%Y-%m-%dT%H:%M:%S")) +3600 }}' # Activate this in March right after the time change
-      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_dhuhr"), "%Y-%m-%dT%H:%M:%S")) }}'       # Always the Normal
+      value_template: '{% set x = states(''sensor.dhuhr_prayer_time'') %} {{ now() >= today_at(strptime(x, "%I:%M %p").time()) }}'
 
   action:
     - service: media_player.volume_set
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.master_bedroom_speaker
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         volume_level: '0.5'
 
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
-        #media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
-        media_content_id: http://192.168.1.160/aud/adhan/adhan_al-aqsa.mp3
+            - media_player.master_bedroom_speaker
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
+        media_content_id: http://192.168.1.160/aud/adhan/adhan_al-aqsa.mp3 
+#       media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
         media_content_type: audio/mp3
     #- delay: '00:03:22'
     - delay: '00:04:15'
@@ -165,24 +166,18 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
         media_content_type: audio/mp3
     - delay: '00:00:19'
-
-#    - service: media_extractor.play_media
-#      data:
-#        entity_id: media_player.family_room_speaker_2
-#        media_content_id: http://192.168.1.160/aud/surah/quran_36.mp3
-#        media_content_type: audio/mp3
 
     # 01 Surah Al'Fatiha
     - service: media_extractor.play_media
       data:
         entity_id:
-          - media_player.googlehome7137
-          - media_player.guest_room_wifi
+          - media_player.family_room_speaker
+          - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_01.mp3
         media_content_type: audio/mp3
     - delay: '00:01:28'
@@ -191,8 +186,8 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
         media_content_type: audio/mp3
     - delay: '00:00:41'
@@ -201,8 +196,8 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
 
@@ -212,56 +207,55 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
         media_content_type: audio/mp3
-
-    - delay: '00:01:16'
+    - delay: '00:01:17'
 
     # Ayat'ul Kursi
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
         media_content_type: audio/mp3
 
 # Asr Adhan
 ################################################################################
 - alias: Asr Adhan
-  id: '1517693010922'
+  id: '1517693010924'
   trigger:
     - platform: template
-#     value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_asr"), "%Y-%m-%dT%H:%M:%S")) -3600 }}' # Activate this in November right after the time change
-#     value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_asr"), "%Y-%m-%dT%H:%M:%S")) +3600 }}' # Activate this in March right after the time change
-      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_asr"), "%Y-%m-%dT%H:%M:%S")) }}'       # Always the Normal
+      value_template: '{% set x = states(''sensor.asr_prayer_time'') %} {{ now() >= today_at(strptime(x, "%I:%M %p").time()) }}'
 
   action:
     - service: media_player.volume_set
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.master_bedroom_speaker
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         volume_level: '0.5'
 
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
-        #media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
+            - media_player.master_bedroom_speaker
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
+#       media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
         media_content_id: http://192.168.1.160/aud/adhan/adhan_al-aqsa.mp3
         media_content_type: audio/mp3
-    #- delay: '00:03:22'
+#   - delay: '00:03:22'
     - delay: '00:04:15'
 
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
         media_content_type: audio/mp3
     - delay: '00:00:19'
@@ -270,8 +264,8 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-          - media_player.googlehome7137
-          - media_player.guest_room_wifi
+          - media_player.family_room_speaker
+          - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_01.mp3
         media_content_type: audio/mp3
     - delay: '00:01:28'
@@ -280,8 +274,8 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
         media_content_type: audio/mp3
     - delay: '00:00:41'
@@ -290,8 +284,8 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
     - delay: '00:00:56'
@@ -300,55 +294,61 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
         media_content_type: audio/mp3
-    - delay: '00:01:16'
+    - delay: '00:01:17'
 
     # Ayat'ul Kursi
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
         media_content_type: audio/mp3
 
 # Maghrib Adhan
 ################################################################################
 - alias: Maghrib Adhan
-  id: '1517693010922'
+  id: '1517693010925'
   trigger:
     - platform: template
-#     value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_maghrib"), "%Y-%m-%dT%H:%M:%S")) -3600 }}' # Activate this in November right after the time change
-#     value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_maghrib"), "%Y-%m-%dT%H:%M:%S")) +3600 }}' # Activate this in March right after the time change
-      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_maghrib"), "%Y-%m-%dT%H:%M:%S")) }}'       # Always the Normal
-
+      value_template: '{% set x = states(''sensor.maghrib_prayer_time'') %} {{ now() >= today_at(strptime(x, "%I:%M %p").time()) }}'
+      
   action:
     - service: media_player.volume_set
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
-        volume_level: '0.5'
+            - media_player.master_bedroom_speaker
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
+        volume_level: '1.0'
 
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
-#        media_content_id: http://192.168.1.160/aud/adhan/bahrain_tv_athan_akmagraib.mp3
-#        media_content_id: http://192.168.1.160/aud/adhan/adhan_al-maghrib_madinah.mp3
-#        media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
-        media_content_id: http://192.168.1.160/aud/adhan/adhan_al-aqsa.mp3
+            - media_player.master_bedroom_speaker
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
+        media_content_id: http://192.168.1.160/aud/adhan/adhan_al-maghrib_madinah.mp3
+#       media_content_id: http://192.168.1.160/aud/adhan/bahrain_tv_athan_akmagraib.mp3
         media_content_type: audio/mp3
-#    - delay: '00:03:22'
-    - delay: '00:04:15'
+    - delay: '00:03:37' # adhan_al-maghrib_madinah
+
+    - service: media_player.volume_set
+      data:
+        entity_id:
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
+        volume_level: '0.5'
 
     - service: media_extractor.play_media
       data:
-        entity_id: media_player.googlehome7137
+        entity_id: 
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
         media_content_type: audio/mp3
     - delay: '00:00:19'
@@ -357,8 +357,8 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-          - media_player.googlehome7137
-          - media_player.guest_room_wifi
+          - media_player.family_room_speaker
+          - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_01.mp3
         media_content_type: audio/mp3
     - delay: '00:01:28'
@@ -367,8 +367,8 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
         media_content_type: audio/mp3
     - delay: '00:00:41'
@@ -377,8 +377,8 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
     - delay: '00:00:56'
@@ -387,46 +387,46 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
         media_content_type: audio/mp3
 
-    - delay: '00:01:16'
+    - delay: '00:01:17'
 
     # Ayat'ul Kursi
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
         media_content_type: audio/mp3
 
 # Isha Adhan
 ################################################################################
 - alias: Isha Adhan
-  id: '1517693010922'
+  id: '1517693010926'
   trigger:
     - platform: template
-#     value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_isha"), "%Y-%m-%dT%H:%M:%S")) -3600 }}' # Activate this in November right after the time change
-#     value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_isha"), "%Y-%m-%dT%H:%M:%S")) +3600 }}'    # Activate this in March right after the time change
-      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_isha"), "%Y-%m-%dT%H:%M:%S")) }}'       # Always the Normal
+      value_template: '{% set x = states(''sensor.isha_prayer_time'') %} {{ now() >= today_at(strptime(x, "%I:%M %p").time()) }}'
 
   action:
     - service: media_player.volume_set
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.master_bedroom_speaker
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         volume_level: '0.5'
 
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
-        #media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
+            - media_player.master_bedroom_speaker
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
+#       media_content_id: http://192.168.1.160/aud/adhan/adhan_makkah.mp3
         media_content_id: http://192.168.1.160/aud/adhan/adhan_al-aqsa.mp3
         media_content_type: audio/mp3
     #- delay: '00:03:22'
@@ -435,8 +435,8 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/dua/dua-e-adhan.mp3
         media_content_type: audio/mp3
     - delay: '00:00:19'
@@ -445,8 +445,8 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-          - media_player.googlehome7137
-          - media_player.guest_room_wifi
+          - media_player.family_room_speaker
+          - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_01.mp3
         media_content_type: audio/mp3
     - delay: '00:01:28'
@@ -455,8 +455,8 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_112.mp3
         media_content_type: audio/mp3
     - delay: '00:00:41'
@@ -465,8 +465,8 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_113.mp3
         media_content_type: audio/mp3
     - delay: '00:00:56'
@@ -475,17 +475,17 @@
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/surah/quran_114.mp3
         media_content_type: audio/mp3
-    - delay: '00:01:16'
+    - delay: '00:01:17'
 
     # Ayat'ul Kursi
     - service: media_extractor.play_media
       data:
         entity_id:
-            - media_player.googlehome7137
-            - media_player.guest_room_wifi
+            - media_player.family_room_speaker
+            - media_player.main_floor_speaker
         media_content_id: http://192.168.1.160/aud/ayah/ayat_ul-kursi.mp3
         media_content_type: audio/mp3
