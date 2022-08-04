@@ -174,6 +174,7 @@
     - service: media_extractor.play_media
       data:
         entity_id:
+            - media_player.master_bedroom_speaker
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
         media_content_id: http://copernicium.universe.hm/aud/dua/dua-e-adhan.mp3
@@ -262,6 +263,7 @@
     - service: media_extractor.play_media
       data:
         entity_id:
+            - media_player.master_bedroom_speaker
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
         media_content_id: http://copernicium.universe.hm/aud/dua/dua-e-adhan.mp3
@@ -355,6 +357,7 @@
     - service: media_extractor.play_media
       data:
         entity_id: 
+            - media_player.master_bedroom_speaker
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
         media_content_id: http://copernicium.universe.hm/aud/dua/dua-e-adhan.mp3
@@ -443,6 +446,7 @@
     - service: media_extractor.play_media
       data:
         entity_id:
+            - media_player.master_bedroom_speaker
             - media_player.family_room_speaker
             - media_player.main_floor_speaker
         media_content_id: http://copernicium.universe.hm/aud/dua/dua-e-adhan.mp3
